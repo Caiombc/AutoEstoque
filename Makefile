@@ -12,3 +12,12 @@ bin/%.o: src/%.cpp
 
 clean:
 	rm -f bin/*.o bin/*.exe
+
+LIB = $(filter-out bin/main.o,$(OBJS))
+
+test: bin/testeRegressivo.exe
+	./bin/testeRegressivo.exe
+
+bin/testeRegressivo.exe: test/main.cpp $(LIB)
+	@mkdir -p bin
+	g++ -Isrc $^ -o $@
