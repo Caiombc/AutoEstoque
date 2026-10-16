@@ -12,6 +12,12 @@ int main() {
     assert(calcularValorTotal(5.0, -2) == -1.0);
     std::cout << "[OK] calcularValorTotal\n";
 
+    assert(estoqueBaixo(2, 5)  == true);
+    assert(estoqueBaixo(0, 1)  == true);
+    assert(estoqueBaixo(5, 5)  == false);
+    assert(estoqueBaixo(10, 5) == false);
+    std::cout << "[OK] estoqueBaixo\n";
+
     std::cout << "Todos os testes passaram!\n";
     return 0;
 }
